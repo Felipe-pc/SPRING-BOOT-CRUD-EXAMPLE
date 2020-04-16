@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.demo.entity.UsersEntity;
 
-public class IUserService {
+public interface IUserService {
 	
 	public List<UsersEntity> findAll();
 
