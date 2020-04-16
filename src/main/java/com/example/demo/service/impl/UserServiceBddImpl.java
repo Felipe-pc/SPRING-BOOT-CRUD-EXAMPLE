@@ -11,7 +11,7 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.service.IUserService;
 
 
-@Service("UserServiceBdd")
+@Service("ServiceBdd")
 public class UserServiceBddImpl implements IUserService {
 	
 	@Autowired
@@ -39,6 +39,10 @@ public class UserServiceBddImpl implements IUserService {
 
 		if (userBdd.isPresent()) {
 			userBdd.get().setNombre(user.getNombre());
+			userBdd.get().setApellidos(user.getApellidos());
+			userBdd.get().setEmail(user.getEmail());
+			userBdd.get().setFechaNacimiento(user.getFechaNacimiento());
+			userBdd.get().setEdad(user.getEdad());
 			return userRepository.save(userBdd.get());
 		}
 

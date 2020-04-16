@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,19 +14,19 @@ public class UsersEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 
 	private String nombre;
 	private String apellidos;
 	private String email;
-	private String fechaNacimiento;
-	private Long edad;
+	private Date fechaNacimiento;
+	private long edad;
 	
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNombre() {
@@ -45,16 +47,16 @@ public class UsersEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getFechaNacimiento() {
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	public Long getEdad() {
+	public long getEdad() {
 		return edad;
 	}
-	public void setEdad(Long edad) {
+	public void setEdad(long edad) {
 		this.edad = edad;
 	}
 	
