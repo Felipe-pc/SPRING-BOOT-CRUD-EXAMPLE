@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entity.ReservasEntity;
 import com.example.demo.entity.SalasEntity;
 import com.example.demo.service.ISalaService;
+import com.example.demo.repository.ReservaRepository;
 
 @RestController
 @RequestMapping("/salas")
@@ -25,10 +27,16 @@ public class SalaController {
 	@Autowired
 	@Qualifier("SalaServiceBdd")
 	private ISalaService salaService;
-	
-	@GetMapping
+	@Autowired
+	private ReservaRepository reserva;
+	/*@GetMapping
 	public List<SalasEntity> findAll() {
 		return salaService.findAll();
+	}*/
+	
+	@GetMapping
+	public List<ReservasEntity> findAllDate(){
+		return reserva.findAll();
 	}
 
 	@GetMapping("/{id}")

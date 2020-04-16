@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "salas")
-@Entity(name = "Salas")
+@Table(name = "sala")
+@Entity(name = "Sala")
 public class SalasEntity {
 	
 	@Id
@@ -15,7 +15,7 @@ public class SalasEntity {
 	private long id;
 	
 	private String nombre;
-	private long numero;
+	private String numero;
 	private String lugar;
 	
 	
@@ -32,10 +32,10 @@ public class SalasEntity {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public long getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(long numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public String getLugar() {

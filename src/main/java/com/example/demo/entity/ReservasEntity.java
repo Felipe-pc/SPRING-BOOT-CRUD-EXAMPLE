@@ -1,6 +1,12 @@
 package com.example.demo.entity;
 
-import java.sql.Date;
+
+
+
+
+
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,18 +14,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "reservas")
-@Entity(name = "Reservas")
+import org.hibernate.annotations.CreationTimestamp;
+
+@Table(name = "reserva")
+@Entity(name = "Reserva")
 public class ReservasEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private long usuario_id;
-	private long sala_id;
+	private Integer usuario;
+	private Integer sala;
+	//@CreationTimestamp
 	private Date fecha;
+	private String motivo;
 	private boolean aceptada;
+	
+	
+	public String getMotivo() {
+		return motivo;
+	}
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
+	}
+	
+	
+	
 	
 	
 	public long getId() {
@@ -28,18 +49,22 @@ public class ReservasEntity {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public long getUsuario_id() {
-		return usuario_id;
+	
+	
+	public Integer getSala() {
+		return sala;
 	}
-	public void setUsuario_id(long usuario_id) {
-		this.usuario_id = usuario_id;
+	public void setSala(Integer sala) {
+		this.sala = sala;
 	}
-	public long getSala_id() {
-		return sala_id;
+	public Integer getUsuario() {
+		return usuario;
 	}
-	public void setSala_id(long sala_id) {
-		this.sala_id = sala_id;
+	public void setUsuario(Integer usuario) {
+		this.usuario = usuario;
 	}
+	
+	
 	public Date getFecha() {
 		return fecha;
 	}
