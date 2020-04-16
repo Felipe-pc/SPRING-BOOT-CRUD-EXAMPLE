@@ -10,8 +10,6 @@ import com.example.demo.entity.UsersEntity;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.IUserService;
 
-import es.soltel.rest.entity.PersonaEntity;
-import es.soltel.rest.repository.PersonaRepository;
 
 @Service("UserServiceBdd")
 public class UserServiceBddImpl implements IUserService {
