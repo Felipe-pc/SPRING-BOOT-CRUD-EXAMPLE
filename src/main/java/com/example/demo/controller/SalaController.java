@@ -27,17 +27,13 @@ public class SalaController {
 	@Autowired
 	@Qualifier("SalaServiceBdd")
 	private ISalaService salaService;
-	@Autowired
-	private ReservaRepository reserva;
-	/*@GetMapping
-	public List<SalasEntity> findAll() {
-		return salaService.findAll();
-	}*/
 	
 	@GetMapping
-	public List<ReservasEntity> findAllDate(){
-		return reserva.findAll();
+	public List<SalasEntity> findAll() {
+		return salaService.findAll();
 	}
+	
+	
 
 	@GetMapping("/{id}")
 	public SalasEntity findById(@PathVariable Long id) {

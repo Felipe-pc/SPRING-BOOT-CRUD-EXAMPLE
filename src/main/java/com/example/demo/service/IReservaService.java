@@ -8,12 +8,14 @@ public interface IReservaService {
 	
 	public List<ReservasEntity> findAll();
 	
-	public ReservasEntity findByNumeroSala(String numero);
+	public ReservasEntity add(ReservasEntity reserva);
+	
+	//public ReservasEntity findByNumeroSala(String numero);
 	
 
 	/*public ReservasEntity findById(Long id);
 
-	public ReservasEntity add(ReservasEntity reserva);
+	
 
 	public ReservasEntity update(ReservasEntity reserva);
 

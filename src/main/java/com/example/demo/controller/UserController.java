@@ -16,20 +16,39 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.UsersEntity;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.IUserService;
-
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
-	
+
 	@Autowired
 	@Qualifier("UserServiceBdd")
 	private IUserService userService;
-	
+
+	@Autowired
+	private UserRepository userRepo;
+
 	@GetMapping
 	public List<UsersEntity> findAll() {
 		return userService.findAll();
+	}
+
+	@GetMapping("/nombres/{nombre}/{apellido}")
+	public UsersEntity findByNombreAndApellido(@PathVariable("nombre") String nombre,
+			@PathVariable("apellido") String apellido) {
+		return userRepo.findByNombreIgnoreCaseAndApellidosLikeIgnoreCase(nombre, apellido);
+	}
+
+	@GetMapping(path = "/orden")
+	public List<UsersEntity> findAllByOrderByNombre() {
+		return userRepo.findAllByOrderByNombre();
+	}
+
+	@GetMapping(path = "/edad/{edad}")
+	public List<UsersEntity> findByEdadLessThanEqual(@PathVariable("edad") Long edad) {
+		return userRepo.findByEdadLessThanEqual(edad);
 	}
 
 	@GetMapping("/{id}")
