@@ -16,21 +16,37 @@ public class SalaServiceBddImpl implements ISalaService {
 	@Autowired
 	private SalaRepository salaRepository;
 	
+	/**
+	 * Metodo que devuelve una lista de todas las salas
+	 */
+	
 	@Override
 	public List<SalasEntity> findAll() {
 		return salaRepository.findAll();
 	}
+	
+	/**
+	 * Metodo que devuelve la sala segun el id insertado
+	 */
 
 	@Override
 	public SalasEntity findById(Long id) {
 		Optional<SalasEntity> sala = salaRepository.findById(id);
 		return sala.isPresent() ? sala.get() : null;
 	}
+	
+	/**
+	 * Metodo que añade una sala
+	 */
 
 	@Override
 	public SalasEntity add(SalasEntity sala) {
 		return salaRepository.save(sala);
 	}
+	
+	/**
+	 * Metodo que modifica una sala
+	 */
 
 	@Override
 	public SalasEntity update(SalasEntity sala) {
@@ -46,6 +62,10 @@ public class SalaServiceBddImpl implements ISalaService {
 
 		return null;
 	}
+	
+	/**
+	 * Metodo que elimina una sala
+	 */
 
 	@Override
 	public void remove(Long id) {

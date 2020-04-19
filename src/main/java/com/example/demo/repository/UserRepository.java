@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.entity.UsersEntity;
 
 public interface UserRepository extends JpaRepository<UsersEntity, Long> {
+	
+	// Metodos/Query creados para realizar las consultas en el controlador
 
 	UsersEntity findByNombreIgnoreCaseAndApellidosLikeIgnoreCase(String nombre, String apellido);
 

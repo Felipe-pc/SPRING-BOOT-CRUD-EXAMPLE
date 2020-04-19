@@ -6,19 +6,18 @@ import com.example.demo.entity.ReservasEntity;
 
 public interface IReservaService {
 	
+	/**
+	 * Metodo que devuelve la lista de todas las reservas
+	 * @return la lista de reservas
+	 */
 	public List<ReservasEntity> findAll();
 	
+	/**
+	 * Metodo que añade una nueva reserva
+	 * @param reserva
+	 * @return la nueva reserva
+	 */
 	public ReservasEntity add(ReservasEntity reserva);
 	
-	//public ReservasEntity findByNumeroSala(String numero);
-	
-
-	/*public ReservasEntity findById(Long id);
-
-	
-
-	public ReservasEntity update(ReservasEntity reserva);
-
-	public void remove(Long id);*/
 
 }

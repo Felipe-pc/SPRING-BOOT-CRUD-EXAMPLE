@@ -1,0 +1,34 @@
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (1, 'Mitchell', 'Hudson', 'mitchell.hudson11@example.com', '1981-02-07 00:00:00', 38);
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (2, 'Melanie', 'Bell', 'melanie.bell51@example.com', '1979-09-08 00:00:00', 39);
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (3, 'Diane', 'Ruiz', 'diane.ruiz24@example.com', '1984-07-06 00:00:00', 34);
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (4, 'Kathy', 'Hudson', 'kathy.hudson28@example.com', '1973-02-04 00:00:00', 46);
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (5, 'Veronica', 'Ryan', 'veronica.ryan77@example.com', '1978-02-05 00:00:00', 41);
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (6, 'Paul', 'Beck', 'paul.beck48@example.com', '1971-04-03 00:00:00', 48);
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (7, 'Robin', 'Gonzales', 'robin.gonzales84@example.com', '1972-05-01 00:00:00', 47);
+INSERT INTO Usuarios (id, nombre, apellidos, email, fecha_nacimiento, edad) VALUES (8, 'Leslie', 'Lee', 'leslie.lee78@example.com', '1970-01-09 00:00:00', 49);
+
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (1, 'Sala 1', '1A', 'Planta baja');
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (2, 'Sala 2', '1B', 'Planta baja');
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (3, 'Sala 3', '2A', 'Primera planta');
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (4, 'Sala 4', '2B', 'Primera planta');
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (5, 'Sala 5', '2C', 'Primera planta');
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (6, 'Sala 6', '2D', 'Primera planta');
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (7, 'Sala 7', '3A', 'Segunda planta');
+INSERT INTO Sala (id, nombre, numero, lugar) VALUES (8, 'Sala 8', '3B', 'Segunda planta');
+
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (1, 1, 2, '2019-04-15 00:00:00', 'Reunión', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (2, 1, 4, '2019-04-04 00:00:00', 'Presentación', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (3, 3, 2, '2019-04-03 00:00:00', null, false);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (4, 7, 7, '2019-04-17 00:00:00', 'Entrevista', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (5, 5, 6, '2019-04-19 00:00:00', 'Formación', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (6, 3, 7, '2019-04-02 00:00:00', null, true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (7, 3, 8, '2019-04-25 00:00:00', 'Píldora formativa', false);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (8, 3, 2, '2019-04-25 00:00:00', 'Píldora formativa', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (9, 5, 4, '2019-04-30 00:00:00', 'Reunión', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (10, 2, 7, '2019-04-21 00:00:00', null, false);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (11, 4, 6, '2019-04-05 00:00:00', 'Presentación', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (12, 5, 1, '2019-04-14 00:00:00', 'Reunión', false);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (13, 5, 7, '2019-04-14 00:00:00', 'Reunión', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (14, 2, 1, '2019-04-15 00:00:00', 'Píldora formativa', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (15, 4, 4, '2019-04-28 00:00:00', 'Entrevista', true);
+INSERT INTO Reserva (id, usuario, sala, fecha, motivo, aceptada) VALUES (16, 2, 7, '2019-04-07 00:00:00', 'Formación', true);

@@ -16,6 +16,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "reserva")
 @Entity(name = "Reserva")
 public class ReservasEntity {
+	
+	/**
+	 * Atributos que tiene el objeto Reservas. La id como clave primaria y autoincrementable
+	 */
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +32,11 @@ public class ReservasEntity {
 	private Date fecha;
 	private String motivo;
 	private boolean aceptada;
+	
+	
+	/**
+	 * METODOS GETTERS Y SETTERS
+	 */
 
 	public String getMotivo() {
 		return motivo;

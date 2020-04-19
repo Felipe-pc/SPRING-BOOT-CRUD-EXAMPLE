@@ -29,43 +29,89 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepo;
+	
+	/**
+	 * Devuelve una lista de todos los usuarios
+	 * @return la lista de usuarios
+	 */
 
 	@GetMapping
 	public List<UsersEntity> findAll() {
 		return userService.findAll();
 	}
+	
+	/**
+	 * Devuelve el usuario segun el nombre y apellido insertado, ignorando mayusculas
+	 * @param nombre
+	 * @param apellido
+	 * @return el usuario
+	 */
 
 	@GetMapping("/nombres/{nombre}/{apellido}")
 	public UsersEntity findByNombreAndApellido(@PathVariable("nombre") String nombre,
 			@PathVariable("apellido") String apellido) {
 		return userRepo.findByNombreIgnoreCaseAndApellidosLikeIgnoreCase(nombre, apellido);
 	}
+	
+	/**
+	 * Devuelve una lista de los usuarios ordenados alfabeticamente
+	 * @return la lista de usuarios
+	 */
 
 	@GetMapping(path = "/orden")
 	public List<UsersEntity> findAllByOrderByNombre() {
 		return userRepo.findAllByOrderByNombre();
 	}
+	
+	/**
+	 * Devuelve una lista de usuarios que tienen una edad menor o igual a la insertada
+	 * @param edad
+	 * @return la lista de usuarios
+	 */
 
 	@GetMapping(path = "/edad/{edad}")
 	public List<UsersEntity> findByEdadLessThanEqual(@PathVariable("edad") Long edad) {
 		return userRepo.findByEdadLessThanEqual(edad);
 	}
+	
+	/**
+	 * Devuelve un usuario segun el id insertado
+	 * @param id
+	 * @return el usuario
+	 */
 
 	@GetMapping("/{id}")
 	public UsersEntity findById(@PathVariable Long id) {
 		return userService.findById(id);
 	}
+	
+	/**
+	 * Post que realizamos para insertar un nuevo usuario
+	 * @param user
+	 * @return el nuevo usuario
+	 */
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public UsersEntity add(@RequestBody UsersEntity user) {
 		return userService.add(user);
 	}
+	
+	/**
+	 * Put para modificar el usuario que deseeamos
+	 * @param user
+	 * @return el usuario modificado
+	 */
 
 	@PutMapping
 	public UsersEntity update(@RequestBody UsersEntity user) {
 		return userService.update(user);
 	}
+	
+	/**
+	 * Delete el usuario segun el id insertado
+	 * @param id
+	 */
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)

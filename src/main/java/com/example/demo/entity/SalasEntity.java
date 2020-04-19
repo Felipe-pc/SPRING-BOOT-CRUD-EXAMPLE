@@ -9,6 +9,9 @@ import javax.persistence.Table;
 @Table(name = "sala")
 @Entity(name = "Sala")
 public class SalasEntity {
+	/**
+	 * Atributos que tiene el objeto Salas. La id como clave primaria y autoincrementable
+	 */
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +22,9 @@ public class SalasEntity {
 	private String lugar;
 	
 	
+	/**
+	 * METODOS GETTERS Y SETTERS
+	 */
 	
 	public long getId() {
 		return id;

@@ -17,22 +17,34 @@ public class UserServiceBddImpl implements IUserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	/**
+	 * Metodo que devuelve una lista con todos los usuarios
+	 */
 	@Override
 	public List<UsersEntity> findAll() {
 		return userRepository.findAll();
 	}
-
+	
+	/**
+	 * Metodo que devuelve un usuario segun el id
+	 */
 	@Override
 	public UsersEntity findById(Long id) {
 		Optional<UsersEntity> user = userRepository.findById(id);
 		return user.isPresent() ? user.get() : null;
 	}
-
+	
+	/**
+	 * Metodo que inserta un nuevo usuario
+	 */
 	@Override
 	public UsersEntity add(UsersEntity user) {
 		return userRepository.save(user);
 	}
-
+	
+	/**
+	 * Metodo que modifica un usuario
+	 */
 	@Override
 	public UsersEntity update(UsersEntity user) {
 		Optional<UsersEntity> userBdd = userRepository.findById(user.getId());
@@ -48,7 +60,10 @@ public class UserServiceBddImpl implements IUserService {
 
 		return null;
 	}
-
+	
+	/**
+	 * Metodo que elimina un usuario segun la id
+	 */
 	@Override
 	public void remove(Long id) {
 		userRepository.deleteById(id);

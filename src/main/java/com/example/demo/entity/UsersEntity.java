@@ -14,6 +14,10 @@ import javax.persistence.Table;
 @Entity(name = "Usuarios")
 public class UsersEntity {
 	
+	/**
+	 * Atributos que tiene el objeto Users. La id como clave primaria y autoincrementable
+	 */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -23,6 +27,10 @@ public class UsersEntity {
 	private String email;
 	private Date fechaNacimiento;
 	private long edad;
+	
+	/**
+	 * METODOS GETTERS Y SETTERS
+	 */
 	
 	
 	public long getId() {

@@ -12,13 +12,21 @@ import com.example.demo.service.ISalaService;
 
 @Service("SalaServiceBdd")
 public class SalaServiceImpl implements ISalaService {
-	
+
 	public List<SalasEntity> salas = new ArrayList<>();
+
+	/**
+	 * Metodo que devuelve una lista con todas las salas
+	 */
 
 	@Override
 	public List<SalasEntity> findAll() {
 		return salas;
 	}
+
+	/**
+	 * Metodo que devuelve una sala segun el id
+	 */
 
 	@Override
 	public SalasEntity findById(Long id) {
@@ -27,12 +35,20 @@ public class SalaServiceImpl implements ISalaService {
 		return user.isPresent() ? user.get() : null;
 	}
 
+	/**
+	 * Metodo que añade una sala
+	 */
+
 	@Override
 	public SalasEntity add(SalasEntity user) {
 		salas.add(user);
 
 		return user;
 	}
+
+	/**
+	 * Metodo que modifica una sala
+	 */
 
 	@Override
 	public SalasEntity update(SalasEntity sala) {
@@ -49,6 +65,10 @@ public class SalaServiceImpl implements ISalaService {
 
 		return sala;
 	}
+
+	/**
+	 * Meotod que elimina una sala
+	 */
 
 	@Override
 	public void remove(Long id) {

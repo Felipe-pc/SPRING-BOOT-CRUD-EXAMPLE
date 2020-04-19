@@ -12,6 +12,8 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.ReservasEntity;
 
 public interface ReservaRepository extends JpaRepository<ReservasEntity, Long> {
+	
+	// Metodos/Query creados para realizar las consultas en el controlador
 
 	List<ReservasEntity> findBySalaEquals(Integer sala);
 
@@ -24,6 +26,13 @@ public interface ReservaRepository extends JpaRepository<ReservasEntity, Long> {
 	List<ReservasEntity> findByAceptadaTrue();
 	
 	List<ReservasEntity> findAll();
+	
+	/**
+	 * Query que muestra la lista de reservas segun el nombre y apellido de usuario insertado
+	 * @param nombre
+	 * @param apellido
+	 * @return  la lista de las reservas
+	 */
 	
 	@Query(value = "SELECT reserva.id, reserva.aceptada, reserva.fecha, reserva.motivo, reserva.sala, reserva.usuario  FROM reserva INNER JOIN usuarios ON reserva.usuario= usuarios.id WHERE usuarios.nombre LIKE  ?1% AND usuarios.apellidos LIKE ?2%", nativeQuery = true)
 	List<ReservasEntity> findReservasByUser(String nombre, String apellido);

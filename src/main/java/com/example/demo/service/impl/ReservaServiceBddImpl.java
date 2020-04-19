@@ -19,11 +19,18 @@ public class ReservaServiceBddImpl implements IReservaService {
 	@Autowired
 	private ReservaRepository reservaRepository;
 	
+	/**
+	 * Metodo que devuelve una lista de todas las reservas
+	 */
+	
 	@Override
 	public List<ReservasEntity> findAll() {
 		return reservaRepository.findAll();
 	}
 	
+	/*
+	 * Metodo que añade una reserva
+	 */
 	@Override
 	public ReservasEntity add(ReservasEntity reserva) {
 		return reservaRepository.save(reserva);
